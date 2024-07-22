@@ -115,7 +115,7 @@ if DEPLOYMENT_TIER not in ("dev", "prod", "local"):
 
 if DEPLOYMENT_TIER == "prod":
     if not ALLOWED_HOSTS:
-        ALLOWED_HOSTS = ["pre.api.keepingly.co", "127.0.0.1"]
+        ALLOWED_HOSTS = ["*", "127.0.0.1"]
     else:
         ALLOWED_HOSTS = [ALLOWED_HOSTS]
 
@@ -141,7 +141,7 @@ if DEPLOYMENT_TIER == "prod":
     }
 elif DEPLOYMENT_TIER == 'dev':
     DEBUG = True
-    ALLOWED_HOSTS = ["104.248.248.179", "127.0.0.1", "localhost"]
+    ALLOWED_HOSTS = ["*"]
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
