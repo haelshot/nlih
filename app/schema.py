@@ -40,3 +40,29 @@ class SignInResponsePayload(Schema):
 class AppointmentSchema(Schema):
     datetime: datetime
     doctor_id: uuid.UUID
+
+
+
+class ServiceSchema(Schema):
+    id: str
+    name: str
+    description: str
+
+class EstimateSchema(Schema):
+    id: str
+    service_id: str
+    description: str
+    estimated_cost: float
+
+class AppointmentCreateSchema(Schema):
+    service_id: str
+    appointment_time: datetime
+    contact_info: str
+    session_id: Optional[str] = None
+
+class AnonymousAppointmentSchema(Schema):
+    id: str
+    service_id: str
+    appointment_time: datetime
+    contact_info: str
+    status: str

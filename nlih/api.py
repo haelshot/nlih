@@ -3,6 +3,7 @@ from app.api import router as api_router
 from app.controllers.authentication.register import router as signup_handler
 from app.controllers.authentication.signin import router as signin_handler
 from app.controllers.appointments.appointments import router as appointment_router
+from app.controllers.digital_front_door.digital_front_door import router as dfr
 
 api = NinjaAPI()
 
@@ -10,4 +11,5 @@ api.add_router("/v1/", api_router)
 api.add_router("/v1/", signup_handler)
 api.add_router("/v1/", signin_handler)
 api.add_router("/v1/", appointment_router)
+api.add_router("/v1/", dfr)
 
